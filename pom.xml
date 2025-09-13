@@ -260,6 +260,27 @@
                 </dependency>
             </dependencies>
         </profile>
+        <profile>
+            <id>mongodb</id>
+            <activation>
+                <property>
+                    <name>env.BENCHBASE_PROFILE</name>
+                    <value>mongodb</value>
+                </property>
+            </activation>
+            <properties>
+                <classifier>mongodb</classifier>
+            </properties>
+            <dependencies>
+                <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-jdbc -->
+                <dependency>
+                    <groupId>org.mongodb</groupId>
+                    <artifactId>mongodb-jdbc</artifactId>
+                    <version>2.3.0</version>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -562,6 +583,7 @@
                                 <ignoredUnusedDeclaredDependency>org.apache.phoenix:phoenix-client-hbase-2.4:jar</ignoredUnusedDeclaredDependency>
                                 <ignoredUnusedDeclaredDependency>com.microsoft.sqlserver:mssql-jdbc:jar</ignoredUnusedDeclaredDependency>
                                 <ignoredUnusedDeclaredDependency>org.xerial:sqlite-jdbc:jar</ignoredUnusedDeclaredDependency>
+                                <ignoredUnusedDeclaredDependency>org.mongodb:mongodb-jdbc:jar</ignoredUnusedDeclaredDependency>
                             </ignoredUnusedDeclaredDependencies>
                         </configuration>
                     </execution>
