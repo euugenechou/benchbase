@@ -156,7 +156,9 @@ public final class TPCCLoader extends Loader<TPCCBenchmark> {
 
         Item item = new Item();
         item.i_id = i;
-        item.i_name = TPCCUtil.randomStr(TPCCUtil.randomNumber(14, 24, benchmark.rng()));
+        item.i_name =
+            TPCCUtil.tagItemName(
+                TPCCUtil.randomStr(TPCCUtil.randomNumber(14, 24, benchmark.rng())));
         item.i_price = TPCCUtil.randomNumber(100, 10000, benchmark.rng()) / 100.0;
 
         // i_data

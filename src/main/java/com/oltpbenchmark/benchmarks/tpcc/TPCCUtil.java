@@ -123,4 +123,13 @@ public class TPCCUtil {
   public static int nonUniformRandom(int A, int C, int min, int max, Random r) {
     return (((randomNumber(0, A, r) | randomNumber(min, max, r)) + C) % (max - min + 1)) + min;
   }
+
+  public static String applyPrefix(String s, String prefix) {
+    int split = Math.min(prefix.length(), s.length());
+    return prefix + s.substring(split);
+  }
+
+  public static String tagItemName(String i_name) {
+    return applyPrefix(i_name, "ITEM");
+  }
 }
